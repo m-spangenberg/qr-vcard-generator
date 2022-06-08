@@ -14,7 +14,7 @@ vCard = {
     "EMAIL;TYPE=WORK": "Email",
     "TITLE": "Title",
     "ROLE": "Role",
-    "FN": "FullName",
+    "FN": "Full Name",
     "TEL;TYPE=CELL": "Telephone",
     "TEL;TYPE=WORK": "Mobile",
     "URL": "URL",
@@ -85,6 +85,8 @@ def main():
         x_pos=660,
         y_pos=180,
         resizable=False,
+        small_icon=r"images/icon.png",
+        large_icon=r"images/icon.png",
     )
 
     dpg.setup_dearpygui()
