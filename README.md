@@ -18,34 +18,40 @@ This desktop application allows a user to enter contact details into a GUI that 
 
 The reason I chose this project was to learn how to create micro-applications for niche use-cases, and in turn learn more lightweight ways of presenting code functionality to end-users in non-technical settings. My reasoning being that good programmers should be able to help non-programmers solve problems by creating tools that simplify tasks and processes.
 
-### __Supported Platforms__
-
-Runs everywhere Python does. (Monitor and mouse not included.)
-
 </br>
 <hr>
 </br>
 
-### __Testing__
+### __Setup__
 
-Inside a virtual environment, using `pipenv`.
+Make use of this one-liner for a quick setup.
 
 ```bash
+git clone https://github.com/m-spangenberg/qr-vcard-generator && cd qr-vcard-generator/ && make init
+```
+
+Or, if you don't have `build-essential` installed, use `pipenv` to set up dependencies in order for the application to function.
+
+```bash
+# clone the repository
 git clone https://github.com/m-spangenberg/qr-vcard-generator
-cd qr-vcard-generator/
-pipenv sync
-cd src/
-pipenv run python3 vcard.py
-```
-With `pip3` instead.
 
-```bash
-git clone [this.repo.url](https://github.com/m-spangenberg/qr-vcard-generator)
+# move into the cloned repo
 cd qr-vcard-generator/
-pip3 install -r requirements.txt
-cd src/
-python3 vcard.py
+
+# make sure to have pipenv installed
+pip install pipenv
+
+# set up venv and install dependencies with pipenv
+pipenv sync
+
+# run the application
+pipenv run python3 project.py
 ```
+
+</br>
+<hr>
+</br>
 
 ### __vCard Format__
 
@@ -77,14 +83,32 @@ NOTE: optional note, keep it short
 END:VCARD
 ```
 
-### __Development Dependencies__
+</br>
+<hr>
+</br>
+
+### __Testing and Development Dependencies__
 
 To set up a development environment for this project with `pipenv`:
 
 ``` bash
-git clone [this.repo.qr-vcard-generator](https://github.com/m-spangenberg/qr-vcard-generator)
-cd qr-vcard-generator/
+make dev
+```
+
+To perform unittests with `pytest`:
+
+``` bash
+make tested
+```
+
+Or, if you don't have `build-essential` installed.
+
+```bash
+# install development dependencies
 pipenv install --dev
+
+# perform unittest
+pipenv run pytest
 ```
 
 </br>
