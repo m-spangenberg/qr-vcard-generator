@@ -11,6 +11,7 @@ dearpygui-ext = "*"
 
 [dev-packages]
 pytest = "*"
+pytest-mock = "*"
 black = "*"
 
 [requires]
