@@ -14,7 +14,7 @@ For my **CS50P** [Final Project](https://cs50.harvard.edu/python/2022/project/),
 
 ### __Description__
 
-This desktop application allows a user to enter contact details into a GUI that then generates a quick response code image that can then be scanned by a mobile device with a QR code scanner. The purpose of using a QR code is the ability to embed contact details in object like business cards, resumes or even artwork.
+This is a single purpose desktop application that allows a user to enter contact details into a GUI that then generates a quick response code image. These QR code images can be scanned by most modern mobile devices that have a camera. QR code images allow for the ability to embed contact details on business cards, resumes, or even artwork.
 
 The reason I chose this project was to learn how to create micro-applications for niche use-cases, and in turn learn more lightweight ways of presenting code functionality to end-users in non-technical settings. My reasoning being that good programmers should be able to help non-programmers solve problems by creating tools that simplify tasks and processes.
 

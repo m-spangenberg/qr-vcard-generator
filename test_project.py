@@ -1,30 +1,33 @@
+import os
 import project
 import pytest
 
 
-def test_quit():
-    """"""
-    ...
+def test_end():
+    """Check that the quit function calls sys.exit"""
+    with pytest.raises(SystemExit):
+        project.end()
 
 
 def test_update_preview():
-    """"""
-    ...
+    """Check that update preview catches exception attempting to load a non-existent file."""
+    with pytest.raises(TypeError):
+        project.update_preview()
 
 
 def test_cleanup():
-    """"""
-    ...
-
-
-def test_generate():
-    """"""
-    ...
+    """Check that cleanup removes file."""
+    f = open('output/preview.png', 'w')
+    f.close()
+    project.cleanup()
+    assert os.path.isfile("output/preview.png") == False
 
 
 def test_build():
-    """"""
-    ...
+    """Assert calling build generates easter egg image."""
+    project.build()
+    assert os.path.isfile("output/preview.png") == True
+    project.cleanup()
 
 
 def test_vcard_exists():

@@ -36,7 +36,7 @@ def main():
             dpg.add_menu_item(label="Generate", tag="generate_menu", callback=generate)
             dpg.add_menu_item(label="Reset", tag="reset_menu", callback=reset)
             dpg.add_menu_item(label="Save", tag="save_menu", callback=generate)
-            dpg.add_menu_item(label="Quit", tag="quit_menu", callback=quit)
+            dpg.add_menu_item(label="Quit", tag="quit_menu", callback=end)
 
     # Build the primary window
     with dpg.window(tag="QR-vCard - V0.1.0"):
@@ -99,7 +99,7 @@ def main():
     cleanup()
 
 
-def quit():
+def end():
     """Removes temporary files and exits the program cleanly."""
     cleanup()
     sys.exit(1)
@@ -109,15 +109,18 @@ def update_preview():
     """Refresh placeholder image with generated qr-code.
     Note all images must have the same dimensions or update_preview
     will fail with segmentation fault."""
-    width, height, channels, data = dpg.load_image("output/preview.png")
-    dpg.set_value("texture_tag", data)
+    try:
+        width, height, channels, data = dpg.load_image("output/preview.png")
+        dpg.set_value("texture_tag", data)
+    except OSError:
+        pass
 
 
 def cleanup():
     """Remove preview image from output folder."""
     try:
         os.remove("output/preview.png")
-    except OSError as e:
+    except OSError:
         pass
 
 
