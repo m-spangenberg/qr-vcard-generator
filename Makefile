@@ -7,7 +7,7 @@ init:
 tested:
     pip install pipenv
     pipenv install --dev
-	pipenv run pytest
+    pipenv run pytest
 
 # Prepare virtual environment and install developement dependencies
 dev:
@@ -16,6 +16,6 @@ dev:
 
 # Check that Pipfile is up to date and generate new requirements.txt and dev-requirements.txt
 prep:
-	pipenv update
-	pipenv lock --requirements
-	pipenv lock --requirements --dev-only
+    pipenv update
+    pipenv lock --requirements
+    pipenv lock --requirements --dev-only

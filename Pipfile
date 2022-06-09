@@ -13,6 +13,9 @@ dearpygui-ext = "*"
 pytest = "*"
 pytest-mock = "*"
 black = "*"
+check50 = "*"
+submit50 = "*"
+style50 = "*"
 
 [requires]
 python_version = "3.8"
