@@ -10,7 +10,7 @@ For my **CS50P** [Final Project](https://cs50.harvard.edu/python/2022/project/),
 
 ### __Video Demo__
 
-[Video Demo Link]()
+[Video Demo Link](https://youtu.be/33GYi6om1kI)
 
 ### __Description__
 
