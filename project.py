@@ -34,6 +34,7 @@ def main():
     with dpg.viewport_menu_bar():
         with dpg.menu(label="File"):
             dpg.add_menu_item(label="Generate", tag="generate_menu", callback=generate)
+            dpg.add_menu_item(label="Reset", tag="reset_menu", callback=reset)
             dpg.add_menu_item(label="Save", tag="save_menu", callback=generate)
             dpg.add_menu_item(label="Quit", tag="quit_menu", callback=quit)
 
@@ -99,7 +100,7 @@ def main():
 
 
 def quit():
-    """Exits the program cleanly"""
+    """Removes temporary files and exits the program cleanly."""
     cleanup()
     sys.exit(1)
 
@@ -113,10 +114,20 @@ def update_preview():
 
 
 def cleanup():
-    """Remove preview image from output folder"""
+    """Remove preview image from output folder."""
     try:
         os.remove("output/preview.png")
     except OSError as e:
+        pass
+
+
+def reset():
+    """Clear all contact fields."""
+    try:
+        display_fields = dict(itertools.islice(vCard.items(), 3, 11))
+        for key, value in display_fields.items():
+            dpg.set_value(value, "")
+    except IndexError:
         pass
 
 
